@@ -10,11 +10,15 @@ function adicionarDocumento(nome) {
     nome,
     texto: "",
   });
+
   return resultado;
 }
 
 function encontrarDocumento(nome) {
-  const documento = documentosColecao.findOne({ nome: nome });
+  const documento = documentosColecao.findOne({
+    nome,
+  });
+
   return documento;
 }
 
@@ -29,6 +33,7 @@ function atualizaDocumento(nome, texto) {
       },
     },
   );
+
   return atualizacao;
 }
 
@@ -36,13 +41,14 @@ function excluirDocumento(nome) {
   const resultado = documentosColecao.deleteOne({
     nome,
   });
+
   return resultado;
 }
 
 export {
-  excluirDocumento,
-  atualizaDocumento,
   encontrarDocumento,
-  adicionarDocumento,
+  atualizaDocumento,
   obterDocumentos,
+  adicionarDocumento,
+  excluirDocumento,
 };

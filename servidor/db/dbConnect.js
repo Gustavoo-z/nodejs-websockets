@@ -12,9 +12,9 @@ try {
   const db = cliente.db("WebSockets");
   documentosColecao = db.collection("documentos");
 
-  console.log("Banco de dados conectado com sucesso!");
-} catch (error) {
-  console.log(error);
+  console.log("Conectado ao banco de dados com sucesso!");
+} catch (erro) {
+  console.log(erro);
 }
 
 export { documentosColecao };

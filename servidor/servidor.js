@@ -3,7 +3,8 @@ import url from "url";
 import path from "path";
 import http from "http";
 import { Server } from "socket.io";
-import "./dbConnect.js";
+
+import "./db/dbConnect.js";
 
 const app = express();
 const porta = process.env.porta || 3000;
@@ -15,7 +16,7 @@ app.use(express.static(diretorioPublico));
 const servidorHttp = http.createServer(app);
 
 servidorHttp.listen(porta, () =>
-  console.log(`Servidor rodando na porta ${porta}`),
+  console.log(`Servidor escutando na porta ${porta}`),
 );
 
 const io = new Server(servidorHttp);
